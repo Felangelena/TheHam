@@ -1,7 +1,91 @@
 :root {
-    --cyan: #18CFAB;
+    --headerColor: rgba(94, 93, 88, 0.6);
+    --mainColor: #18CFAB;
+    --lightColor: #fff;
+    --hexagon: 58px;
+    --mainMenuColor: rgba(255, 255, 255, 0.6);
 }
 
 * {
     font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+.header {
+    position: relative;
+    min-height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--headerColor);
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    width: 198px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-hexagon {
+    width: var(--hexagon);
+    height: calc(var(--hexagon) * 1.1547);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--lightColor);
+    background-color: var(--mainColor);
+    clip-path: polygon(0% 25%, 0% 75%, 50% 100%, 100% 75%, 100% 25%, 50% 0%);
+}
+
+.logo-text {
+    font-size: 32px;
+    color: var(--lightColor);
+}
+
+.logo-text-main_color {
+    font-weight: 700;
+    color: var(--mainColor);
+}
+
+.nav {
+    margin-left: 305px;
+    width: 614px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--mainMenuColor);
+    transition: color .3s ease;
+}
+
+.nav-item:hover {
+    color: var(--mainColor);
+}
+
+.btn-search {
+    width: 20px;
+    height: 20px;
+    margin-left: 20px;
+    background-image: url(/icons/search.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
