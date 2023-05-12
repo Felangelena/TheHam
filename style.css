@@ -1,7 +1,9 @@
 :root {
     --headerColor: rgba(94, 93, 88, 0.6);
     --mainColor: #18CFAB;
-    --lightColor: #fff;
+    --btnPurchase: #00CBF6;
+    --lightTextColor: #fff;
+    --light2TextColor: #D4D4D4;
     --hexagon: 58px;
     --mainMenuColor: rgba(255, 255, 255, 0.6);
 }
@@ -16,7 +18,8 @@
 }
 
 .header {
-    position: relative;
+    position: absolute;
+    width: 100%;
     min-height: 120px;
     display: flex;
     justify-content: center;
@@ -52,7 +55,7 @@
 
 .logo-text {
     font-size: 32px;
-    color: var(--lightColor);
+    color: var(--lightTextColor);
 }
 
 .logo-text-main_color {
@@ -88,4 +91,78 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url("img/BG.jpg");
+    min-height: 1012px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-title {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 35px;
+    color: var(--lightTextColor);
+    text-transform: uppercase;
+}
+
+.home-title-main_color {
+    color: var(--mainColor);
+}
+
+.home-main_title {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 78px;
+    color: var(--lightTextColor);
+    text-transform: uppercase;
+}
+
+.home-subtitle {
+    margin-bottom: 130px;
+    font-size: 34px;
+    color: var(--light2TextColor);
+}
+
+.home-btns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.btn {
+    width: 169px;
+    height: 68px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-top: 5px solid var(--lightTextColor);
+    border-radius: 5px;
+    color: var(--lightTextColor);
+    transition: transform .5s ease;
+}
+
+.btn-explore {
+    margin-right: 28px;
+    background-color: var(--mainColor);
+}
+
+.btn-purchase {
+    background-color: var(--btnPurchase);
+}
+
+.btn:hover {
+    transform: translateY(-10px);
 }
