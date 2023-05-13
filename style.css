@@ -7,6 +7,14 @@
     --light2TextColor: #D4D4D4;
     --hexagon: 58px;
     --mainMenuColor: rgba(255, 255, 255, 0.6);
+    --titleColor: #4E4E4E;
+    --titleFZ: 36px;
+    --tabBGColor: #F8FCFE;
+    --tabBorder: 1px solid #EDEFEF;
+    --tabBorderHover: 1px solid var(--mainColor);
+    --tabFZ: 16px;
+    --tabtxtColor: #717171;
+    --tabTriangle: 20px;
 }
 
 * {
@@ -173,7 +181,6 @@
 }
 
 .options-grid {
-    max-width: 1900px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -204,3 +211,94 @@
     text-transform: uppercase;
 }
 
+.services {
+    padding: 92px 0;
+    min-height: 558px;
+}
+
+.title {
+    position: relative;
+    font-size: var(--titleFZ);
+    color: var(--titleColor);
+    text-align: center;
+}
+
+.title::before, .title::after {
+    content: "";
+    display: block;
+    position: relative;
+
+    margin: 0 auto;
+    height: 1px;
+    width: 75px;
+    background-color: var(--mainColor);
+}
+
+.title::before {
+    top: 70px;
+}
+
+.title::after {
+    top: 30px;
+    left: 10px;
+}
+
+.services-tabs {
+    padding-top: 100px;
+    padding-bottom: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+.tab-title {
+    padding: 20px 34px;
+    background: var(--tabBGColor);
+    border: var(--tabBorder);
+    font-size: var(--tabFZ);
+    color: var(--tabtxtColor);
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-title:hover {
+    border: var(--tabBorderHover);
+}
+
+.tab-title.active {
+    background-color: var(--mainColor);
+    color: var(--lightTextColor);
+}
+
+.tab-title.active::after {
+    content: "";
+    display: block;
+    width: var(--tabTriangle);
+    height: var(--tabTriangle);
+    background-color: var(--mainColor);
+    position: absolute;
+    top: 75%;
+    left: calc(50% - var(--tabTriangle)/2);
+    transform: rotate(45deg);
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.tab-content-img {
+    float: left;
+    margin-right: 13px;
+    width: 194px;
+    height: 139px;
+    object-fit: cover;
+}
+
+.tab-content-txt {
+    font-size: 13.645px;
+    line-height: 24px;
+    color: #777777;
+}
