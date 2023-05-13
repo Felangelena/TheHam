@@ -15,6 +15,11 @@
     --tabFZ: 16px;
     --tabtxtColor: #717171;
     --tabTriangle: 20px;
+
+    --tabWorkBorder: 1px solid #DADADA;
+    --tabWorkBorderHover: 1px solid var(--mainColor);
+    --tabWorkFZ: 14px;
+    --tabWorkTxtColor: #717171;
 }
 
 * {
@@ -255,7 +260,7 @@
     background: var(--tabBGColor);
     border: var(--tabBorder);
     font-size: var(--tabFZ);
-    color: var(--tabtxtColor);
+    color: var(--tabTxtColor);
     cursor: pointer;
     position: relative;
 }
@@ -330,4 +335,68 @@
 .buy-btn {
     margin: 0 auto;
     margin-top: 60px;
+}
+
+.work {
+    padding-top: 98px;
+    min-height: 1212px;
+    background-color: #E9EDEF;
+}
+
+.work-tabs {
+    padding-top: 93px;
+    padding-bottom: 68px;
+    display: flex;
+    justify-content: center;
+}
+
+.work-tab-title {
+    padding: 15px;
+    border: var(--tabWorkBorder);
+    font-size: var(--tabWorkFZ);
+    color: var(--tabWorkTxtColor);
+    cursor: pointer;
+    position: relative;
+    transition: color, border .7s ease;
+}
+
+.work-tab-title:hover, .work-tab-title.active {
+    border: var(--tabBorderHover);
+    color: var(--mainColor);
+}
+
+.work-contents {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 208px;
+    gap: 0;
+}
+
+.work-content {
+    cursor: pointer;
+}
+
+.work-content>img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.work-content {
+    display: none;
+}
+
+.work-content.active {
+    display: block;
+}
+
+.work-btn {
+    margin: 0 auto;
+    margin-top: 70px;
+    border-top: none;
+}
+
+.work-btn::before {
+    content: "+";
+    margin-right: 15px;
+    font-size: 30px;
 }
