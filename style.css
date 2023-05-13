@@ -2,7 +2,7 @@
     --headerColor: rgba(94, 93, 88, 0.6);
     --mainColor: #18CFAB;
     --mainDarkColor: #1C2A33;
-    --btnPurchase: #00CBF6;
+    --btn2ndColor: #00CBF6;
     --lightTextColor: #fff;
     --light2TextColor: #D4D4D4;
     --hexagon: 58px;
@@ -160,16 +160,16 @@
     border-top: 5px solid var(--lightTextColor);
     border-radius: 5px;
     color: var(--lightTextColor);
+    background-color: var(--mainColor);
     transition: transform .5s ease;
 }
 
 .btn-explore {
     margin-right: 28px;
-    background-color: var(--mainColor);
 }
 
 .btn-purchase {
-    background-color: var(--btnPurchase);
+    background-color: var(--btn2ndColor);
 }
 
 .btn:hover {
@@ -298,7 +298,36 @@
 }
 
 .tab-content-txt {
-    font-size: 13.645px;
+    font-size: 14px;
     line-height: 24px;
-    color: #777777;
+    color: #777;
+}
+
+.buy {
+    padding-top: 126px;
+    min-height: 477px;
+    background-image: url("img/bg2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.title2 {
+    font-weight: 700;
+    font-size: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--mainColor);
+}
+
+.buy-txt {
+    padding-top: 25px;
+    font-size: 16px;
+    color: #D8D8D8;
+    text-align: center;
+}
+
+.buy-btn {
+    margin: 0 auto;
+    margin-top: 60px;
 }
