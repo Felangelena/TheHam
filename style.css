@@ -20,6 +20,9 @@
     --tabWorkBorderHover: 1px solid var(--mainColor);
     --tabWorkFZ: 14px;
     --tabWorkTxtColor: #717171;
+
+    --newsDateBG: #203E38;
+    --newsDateTxt: #fff;
 }
 
 * {
@@ -471,3 +474,71 @@
     font-size: 30px;
 }
 
+.news {
+    min-height: 960px;
+    padding-top: 84px;
+    padding-bottom: 130px;
+}
+
+.news-grid {
+    padding-top: 105px;
+    display: grid;
+    grid-template-columns: repeat(4, 265px);
+    grid-auto-rows: 280px;
+    grid-gap: 44px 33px;
+}
+
+.news-item {
+    position: relative;
+}
+
+.news-item-img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.news-item-date {
+    width: 66px;
+    height: 64px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--newsDateBG);
+    color: var(--newsDateTxt);
+    font-size: 16px;
+    line-height: 25px;
+    text-align: center;
+    transition: background-color .3s ease-in;
+}
+
+.news-item-title {
+    padding-top: 14px;
+    padding-left: 20px;
+    font-size: 18px;
+    color: #717171;
+    transition: color .3s ease-in;
+}
+
+.news-item-info {
+    padding-top: 16px;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #777777;
+}
+
+.news-info-divider {
+    padding-left: 18px;
+    padding-right: 18px;
+}
+
+.news-item:hover .news-item-date {
+    background-color: var(--mainColor);
+}
+
+.news-item:hover .news-item-title {
+    color: var(--mainColor);
+}
