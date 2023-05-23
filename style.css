@@ -23,6 +23,8 @@
 
     --newsDateBG: #203E38;
     --newsDateTxt: #fff;
+
+    --opinionTxtColor: #BBBBBB;
 }
 
 * {
@@ -541,4 +543,118 @@
 
 .news-item:hover .news-item-title {
     color: var(--mainColor);
+}
+
+.opinion {
+    padding-top: 98px;
+    min-height: 853px;
+    background-image: url("img/BG3.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.opinion .title {
+    color: #fff;
+}
+
+.opinion-txt {
+    position: relative;
+    padding-top: 170px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    color: var(--opinionTxtColor);
+}
+
+.opinion-txt::before {
+    position: absolute;
+    top: 130px;
+    left: calc(50% - 20px);
+    content: "❛❛";
+    font-weight: 700;
+    font-size: 80px;
+    color: var(--mainColor);
+}
+
+.opinion-author {
+    padding-top: 37px;
+    font-weight: 700;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--mainColor);
+}
+
+.opinion-profession {
+    padding-top: 17px;
+    font-weight: 300;
+    font-size: 13px;
+    text-align: center;
+    color: var(--opinionTxtColor);
+}
+
+.opinion-avatar {
+    margin-top: 50px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 166px;
+    height: 166px;
+    border-radius: 100%;
+    border: rgba(31, 218, 181, 0.2) solid 12px;
+}
+
+.opinion-nav-box {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    color: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    transition: background-color .3s ease-in;
+}
+
+.arrow:hover {
+    background-color: var(--mainColor);
+    border: none;
+}
+
+.arrow-right {
+    margin-left: 25px;
+}
+
+.arrow-left {
+    margin-right: 25px;
+}
+
+.opinion-nav{
+    width: 370px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.opinion-nav-item {
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: rgba(31, 218, 181, 0.2) solid 4px;
+    cursor: pointer;
+    transition: transform .3s ease;
+}
+
+.opinion-nav-item:hover {
+    transform: translateY(-15px);
 }
