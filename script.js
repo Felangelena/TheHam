@@ -140,3 +140,15 @@ controls.addEventListener('click', e => {
         startShow();
     }
 });
+
+// Masonry
+
+window.onload = () => {;
+    const grid = document.querySelector('.grid');
+    const masonry = new Masonry(grid, {
+        itemSelector: '.grid-item',
+        columnWidth: 10,
+    });
+}
+
+
