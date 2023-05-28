@@ -346,7 +346,6 @@
 .work {
     padding-top: 98px;
     padding-bottom: 100px;
-    min-height: 1212px;
     background-color: #E9EDEF;
 }
 
@@ -549,12 +548,33 @@
 }
 
 .opinion {
-    padding-top: 98px;
-    min-height: 853px;
+    padding: 98px 0;
+    min-height: 854px;
     background-image: url("img/BG3.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.slider {
+    position: relative;
+    min-height: 367px;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    z-index: 0;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+    transition: opacity 2s ease;
 }
 
 .opinion .title {
@@ -610,7 +630,8 @@
 }
 
 .opinion-nav-box {
-    margin-top: 50px;
+    position: relative;
+    top: 230px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -634,11 +655,11 @@
     border: none;
 }
 
-.arrow-right {
+.next {
     margin-left: 25px;
 }
 
-.arrow-left {
+.prev {
     margin-right: 25px;
 }
 
@@ -649,6 +670,10 @@
 }
 
 .opinion-nav-item {
+    transition: transform .3s ease;
+}
+
+.opinion-nav-img {
     display: block;
     width: 60px;
     height: 60px;
@@ -658,6 +683,7 @@
     transition: transform .3s ease;
 }
 
-.opinion-nav-item:hover {
+.opinion-nav-item:hover, .opinion-nav-item.active {
     transform: translateY(-15px);
 }
+

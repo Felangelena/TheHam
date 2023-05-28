@@ -89,3 +89,54 @@ workTabList.addEventListener("click", (e) => {
         filterImgs(filter, imgs);
     }
 });
+
+// Carousel
+
+const prev  = document.querySelector('.arrow.prev');
+const next  = document.querySelector('.arrow.next');
+const controls = document.querySelector('.opinion-nav-box');
+const slider = document.querySelector('.slider');
+const dots = document.querySelector('.opinion-nav');
+
+let sliderIndex = 0;
+let timer;
+
+function changeActiveSlide() {
+    slider.querySelector('.active').classList.remove('active');
+    slider.children[sliderIndex].classList.add('active');
+    dots.querySelector('.active').classList.remove('active');
+    dots.children[sliderIndex].classList.add('active');
+}
+
+function startShow () {
+    timer = setInterval(function(){
+        sliderIndex = sliderIndex < 3 ? ++sliderIndex : 0;
+        changeActiveSlide();
+    }, 6000)
+}
+
+startShow();
+
+controls.addEventListener('click', e => {
+    if(e.target.classList.contains('next')){
+        console.log('next');
+        sliderIndex = sliderIndex < 3 ? ++sliderIndex : 0;
+        changeActiveSlide();
+        clearInterval(timer);
+        startShow();
+    }
+    if(e.target.classList.contains('prev')){
+        console.log('prev');
+        sliderIndex = sliderIndex > 0 ? --sliderIndex : 3;
+        changeActiveSlide();
+        clearInterval(timer);
+        startShow();
+    }
+    if(e.target.classList.contains("opinion-nav-img")) {
+        console.log('dots');
+        sliderIndex = Array.from(document.getElementsByClassName("opinion-nav-img")).indexOf(e.target);
+        changeActiveSlide();
+        clearInterval(timer);
+        startShow();
+    }
+});
